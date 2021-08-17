@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LoL(My Profile)</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="id">Champion ID</string>
+    <string name="Name">Champion Name</string>
+    <string name="hint_Name">Enter Updated Champion Name</string>
+    <string name="Role">Champion Role</string>
+    <string name="hint_Role">Enter Updated Champion Role</string>
+    <string name="stars">Stars</string>
+
+
+</resources>
