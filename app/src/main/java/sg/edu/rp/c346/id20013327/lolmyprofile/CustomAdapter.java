@@ -1,8 +1,10 @@
 package sg.edu.rp.c346.id20013327.lolmyprofile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.media.Rating;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,7 @@ public class CustomAdapter extends ArrayAdapter {
         TextView tvRole = rowView.findViewById(R.id.tvRole);
         ImageView imageView = rowView.findViewById(R.id.imageView);
         RatingBar ratingBar = rowView.findViewById(R.id.ratingBar);
+        TextView tvLink = rowView.findViewById(R.id.tvLink);
 
         //To obtain the Android version information based on the position
         Champions currentCham = champions.get(position);
@@ -47,15 +50,17 @@ public class CustomAdapter extends ArrayAdapter {
         tvName.setText(currentCham.getName());
         tvRole.setText(currentCham.getRole());
         ratingBar.setRating(currentCham.getStar());
+        tvLink.setText("");
 
         if(currentCham.getName().equalsIgnoreCase("Thresh")) {
             imageView.setImageResource(R.drawable.thresh);
+            tvLink.setText("https://www.youtube.com/results?search_query=top+thresh+plays+2021");
         } else if (currentCham.getName().equalsIgnoreCase("Zyra")){
             imageView.setImageResource(R.drawable.zyra);
+            tvLink.setText("https://www.youtube.com/watch?v=gZjOOHvAYiA&ab_channel=LOLSPACE");
         } else {
             imageView.setVisibility(View.INVISIBLE);
         }
-
         return rowView;
     }
 }

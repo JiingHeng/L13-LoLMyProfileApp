@@ -117,10 +117,10 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View viewDialog = inflater.inflate(R.layout.input,null);
+//                View viewDialog = inflater.inflate(R.layout.input,null);
 
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(ThirdActivity.this);
-                myBuilder.setView(viewDialog);
+//                myBuilder.setView(viewDialog);
                 myBuilder.setTitle("Danger");
                 myBuilder.setMessage("Are you sure you want to discard the changes?");
                 myBuilder.setCancelable(false);

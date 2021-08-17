@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvName, tvRole;
     EditText etName, etRole;
     RatingBar rbStar;
-    Button btnAdd, btnView;
+    Button btnAdd, btnView,btnWebsite;
 
 
     @Override
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         rbStar = findViewById(R.id.rbStar);
         btnAdd = findViewById(R.id.btnAdd);
         btnView = findViewById(R.id.btnView);
+        btnWebsite = findViewById(R.id.btnWebsite);
 
         //To add the champions
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(i);
+            }
+        });
+
+        btnWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link = "https://www.riotgames.com/en";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+                startActivity(intent);
             }
         });
     }
